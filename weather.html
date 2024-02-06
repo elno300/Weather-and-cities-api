@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather app</title>
+    <meta
+      name="description"
+      content="Simple weather site for current weather"
+    />
+    <link rel="stylesheet" type="text/css" href="css/weather.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- <link rel="stylesheet" href="/css/main.css"> -->
+
+    <!-- Extra bibliotek som inte finns i javascript annars, just detta bibliotek är ett datavisualiseringsbibliotek med chart-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <main>
+      <div id="firstPage">
+        <header>
+          <nav>
+            <h1>CITY APP</h1>
+            <ul id="menu">
+              <li><a href="#about">About</a></li>
+              <li><a href="weather.html">Weather</a></li>
+              <li><a href="index.html">Cities</a></li>
+            </ul>
+          </nav>
+        </header>
+        <div class="background">
+          <section class="transparent-window">
+            <div id="weather-content-container">
+              <!-- <p>Type in a city to get a current weather report</p> -->
+              <div id="inputfield-btn-wrapper">
+                <input
+                  type="text"
+                  id="search-weather"
+                  placeholder="City name.."
+                />
+                <button type="submit" id="weather-search-btn">
+                  <i
+                    id="magnifying-glass"
+                    class="bi bi-search"
+                    aria-hidden="true"
+                  ></i>
+                </button>
+              </div>
+              <div id="chart-weater-btn-container">
+                <button id="weather-btn">Weather</button>
+                <button id="chart-btn">Daily temperature</button>
+              </div>
+              <div id="weather-report-container">
+                <div id="temp-svg-wrapper">
+                  <div id="temperature-container"></div>
+                  <div id="weather-symbol-container"></div>
+                </div>
+
+                <div id="wind-precipitation-wrapper">
+                  <div id="wind-container"></div>
+                  <div id="precipitation-container"></div>
+                </div>
+              </div>
+              <div id="chart-container" style="display: none">
+                <canvas id="weather-chart"></canvas>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+    <script src="javaScript/weather.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </body>
+</html>
