@@ -62,17 +62,14 @@ async function getWeather(){
 
     console.log(weatherReport)
     console.log(weatherReport.hourly.temperature_2m.length, 'Detta är längden på apiet')
-    // console.log(weatherReport.forecast_days, 'Detta är längden på apiet')
+
     const tempPerHour = []
-
-
 
     for(let i=0; i<weatherReport.hourly.temperature_2m.length; i++){
 
       temperatureArray.push(weatherReport.hourly.temperature_2m[i])
       let time = weatherReport.hourly.time[i]
       dateTime.push(time.slice(11))
-      // tempPerHour.push ({[dateTime] : tempPerHour })
     }
 
     console.log(temperatureArray , dateTime)
@@ -231,11 +228,6 @@ async function getWeather(){
 
     // Vädersymbolen skickas som svg-kod eller som en png beroende resultatet i switch case.
     weatherSymbolContainer.innerHTML = weatherSymbol
-
-
-    // Vad jag har kvar att utveckla
-    // En try catch som hanterar error. Tex om man inte skriver in något i
-    // textrutan eller om koordinaterna inte hittas för staden.
 
   }
 

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>City app</title>
+    <meta name="description" content="Simple cities information site" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+  </head>
+  <body>
+    <!-- För att bakgrundsbilden ska täcka hela bakgrunden (också bakom navigeringsfältet/header) -->
+    <div id="background-container">
+      <header>
+        <nav>
+          <h1>CITIES API</h1>
+          <ul id="menu">
+            <!-- <li><a href="#about">About</a></li> -->
+            <li><a href="index.html">Weather</a></li>
+            <li><a href="cities.html">Cities</a></li>
+          </ul>
+        </nav>
+      </header>
+      <main>
+        <section id="cities-intro-container">
+          <div id="cities-intro-text-wrapper">
+            <div class="cities-heading-wrapper">
+              <span class="cities-heading1">Cities</span>
+              <span class="cities-heading2">service</span>
+            </div>
+            <p>Search or make changes to the Cities API on this page.</p>
+
+            <fieldset>
+              <legend id="search-legend">Search</legend>
+              <div id="drop-down-menu-plus-button">
+                <form id="cities-form1">
+                  <select name="search" id="search"></select>
+                  <button type="button" id="city-search-button">
+                    <!-- Förstoringsglas -->
+                    <i
+                      id="magnifying-glass"
+                      class="bi bi-search"
+                      aria-hidden="true"
+                    ></i>
+                  </button>
+                </form>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend id="addNewCityLegend">Add new city</legend>
+              <div id="addNew-wrapper">
+                <input
+                  id="input-new-city-name"
+                  class="addNew"
+                  name="newCity"
+                  placeholder="Stockholm.."
+                />
+
+                <div id="add-city-plus-button-wrapper">
+                  <input
+                    id="input-new-population"
+                    class="addNew"
+                    name="population"
+                    placeholder="Population"
+                  />
+                  <button id="add-new-city-button">
+                    <svg
+                      id="plus-icon"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                    >
+                      <path
+                        d="M2.14645 2.85355C1.95118 2.65829 1.95118 2.34171 2.14645 2.14645C2.34171 1.95118 2.65829 1.95118 2.85355 2.14645L8 7.29289L13.1464 2.14645C13.3417 1.95118 13.6583 1.95118 13.8536 2.14645C14.0488 2.34171 14.0488 2.65829 13.8536 2.85355L8.70711 8L13.8536 13.1464C14.0488 13.3417 14.0488 13.6583 13.8536 13.8536C13.6583 14.0488 13.3417 14.0488 13.1464 13.8536L8 8.70711L2.85355 13.8536C2.65829 13.0488 2.34171 14.0488 2.14645 13.8536C1.95119 13.6583 1.95119 13.3417 2.14645 13.1464L7.29289 8L2.14645 2.85355Z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+                <div id="error-message-population"></div>
+              </div>
+            </fieldset>
+
+            <!-- ---------------- -->
+          </div>
+        </section>
+        <section id="citiesInfo">
+          <!-- Här nedan hamnar all information om staden eller städerna -->
+          <section id="cities-list"></section>
+        </section>
+      </main>
+    </div>
+    <!---Background container-->
+
+    <script src="javaScript/city.js"></script>
+  </body>
+</html>
